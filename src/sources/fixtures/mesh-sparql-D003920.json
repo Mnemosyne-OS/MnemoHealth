@@ -1,0 +1,13 @@
+{ "head": {
+    "vars": [ "label" , "scope" , "updated" , "revised" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "label": { "type": "literal" , "xml:lang": "en" , "value": "Diabetes Mellitus" } ,
+        "scope": { "type": "literal" , "xml:lang": "en" , "value": "A heterogeneous group of disorders characterized by HYPERGLYCEMIA and GLUCOSE INTOLERANCE." } ,
+        "updated": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "2017-07-17" }
+      }
+    ]
+  }
+}

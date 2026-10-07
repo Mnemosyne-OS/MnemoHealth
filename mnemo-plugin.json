@@ -1,0 +1,44 @@
+{
+  "name": "@mnemosyne-plugins/mnemo-health",
+  "displayName": "MnemoHealth",
+  "version": "0.2.0",
+  "category": "Memory",
+  "vendor": "Mnemosyne Labs",
+  "license": "MIT",
+  "description": "Medical texts in your memory, from public sources: rare diseases (Orphanet, CC BY 4.0, English, French, Spanish), mental health topics (NIMH, public domain), WHO fact sheets (English, French, Spanish), the MeSH medical vocabulary (U.S. National Library of Medicine) and open-access research articles (PubMed Central, licence shown per article). Each text keeps its source, its date and its licence, in your knowledge folder and in one Memory Pack per source. It quotes texts and gives no medical advice.",
+  "descriptionI18n": {
+    "en": "Medical texts in your memory, from public sources: rare diseases (Orphanet, CC BY 4.0, English, French, Spanish), mental health topics (NIMH, public domain), WHO fact sheets (English, French, Spanish), the MeSH medical vocabulary (U.S. National Library of Medicine) and open-access research articles (PubMed Central, licence shown per article). Each text keeps its source, its date and its licence, in your knowledge folder and in one Memory Pack per source. It quotes texts and gives no medical advice.",
+    "fr": "Des textes médicaux dans ta mémoire, de sources publiques : maladies rares (Orphanet, CC BY 4.0, anglais, français, espagnol), sujets de santé mentale (NIMH, domaine public), fiches santé de l'OMS (anglais, français, espagnol), le vocabulaire médical MeSH (Bibliothèque nationale de médecine des États-Unis) et des articles de recherche en accès ouvert (PubMed Central, licence affichée par article). Chaque texte garde sa source, sa date et sa licence, dans ton dossier des connaissances et dans un Memory Pack par source. Il cite des textes et ne donne aucun conseil médical.",
+    "es": "Textos médicos en tu memoria, de fuentes públicas: enfermedades raras (Orphanet, CC BY 4.0, inglés, francés, español), temas de salud mental (NIMH, dominio público), notas descriptivas de la OMS (inglés, francés, español), el vocabulario médico MeSH (Biblioteca Nacional de Medicina de EE. UU.) y artículos de investigación en acceso abierto (PubMed Central, licencia mostrada por artículo). Cada texto conserva su fuente, su fecha y su licencia, en tu carpeta de conocimientos y en un Memory Pack por fuente. Cita textos y no da ningún consejo médico."
+  },
+  "keywords": [
+    "health",
+    "medicine",
+    "rare diseases",
+    "orphanet",
+    "mental health",
+    "nimh",
+    "who",
+    "mesh",
+    "pubmed central"
+  ],
+  "permissions": [
+    "vault:write",
+    "vault:read",
+    "dialog:open"
+  ],
+  "updateStrategy": "git",
+  "entrypoints": {
+    "renderer": "index.html"
+  },
+  "widgets": [
+    {
+      "id": "mnemo-health-main",
+      "icon": "🩺",
+      "name": "MnemoHealth",
+      "route": "index.html",
+      "defaultWidth": 760,
+      "defaultHeight": 780
+    }
+  ]
+}

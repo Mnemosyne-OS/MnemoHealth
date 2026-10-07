@@ -1,0 +1,103 @@
+{
+  "data": {
+    "__count": 11645,
+    "__licence": {
+      "identifier": "CC-BY-4.0",
+      "link": "https://creativecommons.org/licenses/by/4.0",
+      "name": "Creative Commons Attribution 4.0 International"
+    },
+    "results": [
+      {
+        "ORPHAcode": 166024,
+        "Preferred term": "Multiple epiphyseal dysplasia-macrocephaly-facial dysmorphism syndrome"
+      },
+      {
+        "ORPHAcode": 166032,
+        "Preferred term": "Multiple epiphyseal dysplasia-miniepiphyses syndrome"
+      },
+      {
+        "ORPHAcode": 58,
+        "Preferred term": "Alexander disease"
+      },
+      {
+        "ORPHAcode": 166029,
+        "Preferred term": "Multiple epiphyseal dysplasia-severe proximal femoral dysplasia syndrome"
+      },
+      {
+        "ORPHAcode": 61,
+        "Preferred term": "Alpha-mannosidosis"
+      },
+      {
+        "ORPHAcode": 166038,
+        "Preferred term": "Metaphyseal chondrodysplasia, Kaitila type"
+      },
+      {
+        "ORPHAcode": 93,
+        "Preferred term": "Aspartylglucosaminuria"
+      },
+      {
+        "ORPHAcode": 166035,
+        "Preferred term": "Brachydactyly-short stature-retinitis pigmentosa syndrome"
+      },
+      {
+        "ORPHAcode": 585,
+        "Preferred term": "Multiple sulfatase deficiency"
+      },
+      {
+        "ORPHAcode": 118,
+        "Preferred term": "Beta-mannosidosis"
+      },
+      {
+        "ORPHAcode": 166068,
+        "Preferred term": "Pontocerebellar hypoplasia type 5"
+      },
+      {
+        "ORPHAcode": 141,
+        "Preferred term": "Canavan disease"
+      },
+      {
+        "ORPHAcode": 166063,
+        "Preferred term": "Pontocerebellar hypoplasia type 4"
+      },
+      {
+        "ORPHAcode": 166078,
+        "Preferred term": "Von Willebrand disease type 1"
+      },
+      {
+        "ORPHAcode": 206,
+        "Preferred term": "NON RARE IN EUROPE: Crohn disease"
+      },
+      {
+        "ORPHAcode": 166073,
+        "Preferred term": "Pontocerebellar hypoplasia type 6"
+      },
+      {
+        "ORPHAcode": 213,
+        "Preferred term": "Cystinosis"
+      },
+      {
+        "ORPHAcode": 166084,
+        "Preferred term": "Von Willebrand disease type 2A"
+      },
+      {
+        "ORPHAcode": 333,
+        "Preferred term": "Farber disease"
+      },
+      {
+        "ORPHAcode": 166081,
+        "Preferred term": "Von Willebrand disease type 2"
+      }
+    ]
+  },
+  "datasetCategory": {
+    "lang": "en",
+    "name": "Rare diseases and cross-referencing"
+  },
+  "parameters": {
+    "path": {},
+    "query": {
+      "language": "en"
+    }
+  },
+  "uri": "https://api.orphadata.com/rd-cross-referencing/orphacodes?language=en"
+}

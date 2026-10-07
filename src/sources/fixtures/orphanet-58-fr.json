@@ -1,0 +1,120 @@
+{
+  "data": {
+    "__count": 1,
+    "__licence": {
+      "identifier": "CC-BY-4.0",
+      "link": "https://creativecommons.org/licenses/by/4.0",
+      "name": "Creative Commons Attribution 4.0 International"
+    },
+    "results": {
+      "Date": "2026-06-23 07:59:13",
+      "DisorderDisorderAssociation": null,
+      "DisorderFlag": [
+        {
+          "Label": null,
+          "Value": 1
+        }
+      ],
+      "DisorderGroup": "Pathologie",
+      "ExternalReference": [
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "5774",
+          "Source": "GARD"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": "Code attribu\u00e9 (CIM-10/CIM-11: Le code cible est assign\u00e9 par Orphanet)",
+          "DisorderMappingRelation": "NTBT (Le code ORPHA est plus restreint que le code cible utilis\u00e9 pour le repr\u00e9senter)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "G93.8",
+          "Source": "ICD-10"
+        },
+        {
+          "DisorderMappingICDRefUri": 2023359698,
+          "DisorderMappingICDRefUrl": "https://icd.who.int/browse/latest-release/mms/en#2023359698",
+          "DisorderMappingICDRelation": "Code sp\u00e9cifique (CIM-10/CIM-11: Le code ORPHA a son propre code dans la terminologie cible)",
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "8A44.2",
+          "Source": "ICD-11"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "0008752",
+          "Source": "MONDO"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "D038261",
+          "Source": "MeSH"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "10083059",
+          "Source": "MedDRA"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "203450",
+          "Source": "OMIM"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Alignement exact: les deux concepts sont \u00e9quivalents)",
+          "DisorderMappingValidationStatus": "Valid\u00e9",
+          "Reference": "C0270726",
+          "Source": "UMLS"
+        }
+      ],
+      "ORPHAcode": 58,
+      "OrphanetURL": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=fr&Expert=58",
+      "Preferred term": "Maladie d'Alexander",
+      "SummaryInformation": [
+        {
+          "D\u00e9finition": "La maladie d'Alexander (AxD) est une maladie neurod\u00e9g\u00e9n\u00e9rative rare affectant les astrocytes, comprenant deux formes cliniques, l'AxD type I et l'AxD type II , caract\u00e9ris\u00e9e par diff\u00e9rents degr\u00e9s de macroc\u00e9phalie, spasticit\u00e9, ataxie et convulsions, et conduisant \u00e0 une r\u00e9gression psychomotrice et au d\u00e9c\u00e8s."
+        }
+      ],
+      "Synonym": [
+        "AxD"
+      ],
+      "Typology": "Maladie"
+    }
+  },
+  "datasetCategory": {
+    "lang": "fr",
+    "name": "Rare diseases and cross-referencing"
+  },
+  "parameters": {
+    "path": {
+      "ORPHAcode": 58
+    },
+    "query": {
+      "lang": "fr"
+    }
+  },
+  "uri": "https://api.orphadata.com/rd-cross-referencing/orphacodes/58?lang=fr"
+}

@@ -1,0 +1,26 @@
+{ "head": {
+    "vars": [ "d" , "label" , "scope" , "updated" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "d": { "type": "uri" , "value": "http://id.nlm.nih.gov/mesh/D003919" } ,
+        "label": { "type": "literal" , "xml:lang": "en" , "value": "Diabetes Insipidus" } ,
+        "scope": { "type": "literal" , "xml:lang": "en" , "value": "A disease that is characterized by frequent urination, excretion of large amounts of dilute URINE, and excessive THIRST. Etiologies of diabetes insipidus include deficiency of antidiuretic hormone (also known as ADH or VASOPRESSIN) secreted by the NEUROHYPOPHYSIS, impaired KIDNEY response to ADH, and impaired hypothalamic regulation of thirst." } ,
+        "updated": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "2021-06-30" }
+      } ,
+      { 
+        "d": { "type": "uri" , "value": "http://id.nlm.nih.gov/mesh/D003920" } ,
+        "label": { "type": "literal" , "xml:lang": "en" , "value": "Diabetes Mellitus" } ,
+        "scope": { "type": "literal" , "xml:lang": "en" , "value": "A heterogeneous group of disorders characterized by HYPERGLYCEMIA and GLUCOSE INTOLERANCE." } ,
+        "updated": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "2017-07-17" }
+      } ,
+      { 
+        "d": { "type": "uri" , "value": "http://id.nlm.nih.gov/mesh/D016640" } ,
+        "label": { "type": "literal" , "xml:lang": "en" , "value": "Diabetes, Gestational" } ,
+        "scope": { "type": "literal" , "xml:lang": "en" , "value": "Diabetes mellitus induced by PREGNANCY but resolved at the end of pregnancy. It does not include previously diagnosed diabetics who become pregnant (PREGNANCY IN DIABETICS). Gestational diabetes usually develops in late pregnancy when insulin antagonistic hormones peaks leading to INSULIN RESISTANCE; GLUCOSE INTOLERANCE; and HYPERGLYCEMIA." } ,
+        "updated": { "type": "literal" , "datatype": "http://www.w3.org/2001/XMLSchema#date" , "value": "2021-06-30" }
+      }
+    ]
+  }
+}

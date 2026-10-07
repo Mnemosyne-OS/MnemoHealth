@@ -1,0 +1,93 @@
+{
+  "data": {
+    "__count": 1,
+    "__licence": {
+      "identifier": "CC-BY-4.0",
+      "link": "https://creativecommons.org/licenses/by/4.0",
+      "name": "Creative Commons Attribution 4.0 International"
+    },
+    "results": {
+      "Date": "2026-06-23 07:58:18",
+      "DisorderDisorderAssociation": null,
+      "DisorderFlag": [
+        {
+          "Label": null,
+          "Value": 1
+        }
+      ],
+      "DisorderGroup": "Trastorno",
+      "ExternalReference": [
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": "C\u00f3digo atribuido (CIE-10/CIE-11: Orphanet asigna el c\u00f3digo de destino)",
+          "DisorderMappingRelation": "NTBT (el c\u00f3digo ORPHA es m\u00e1s espec\u00edfico que el c\u00f3digo de destino utilizado para representarlo)",
+          "DisorderMappingValidationStatus": "Validado",
+          "Reference": "Q77.3",
+          "Source": "ICD-10"
+        },
+        {
+          "DisorderMappingICDRefUri": 1359939784,
+          "DisorderMappingICDRefUrl": "https://icd.who.int/browse/latest-release/mms/en#2009123831",
+          "DisorderMappingICDRelation": "T\u00e9rmino indexado (CIE-10: entidad de Orphanet incluida en el \u00edndice de la CIE-10. CIE-11: entidad de Orphanet incluida en la Fundaci\u00f3n de la CIE-11)",
+          "DisorderMappingRelation": "NTBT (el c\u00f3digo ORPHA es m\u00e1s espec\u00edfico que el c\u00f3digo de destino utilizado para representarlo)",
+          "DisorderMappingValidationStatus": "Validado",
+          "Reference": "LD24.61",
+          "Source": "ICD-11"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "correspondencia exacta (los t\u00e9rminos y los conceptos son equivalentes)",
+          "DisorderMappingValidationStatus": "Validado",
+          "Reference": "0011778",
+          "Source": "MONDO"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "correspondencia exacta (los t\u00e9rminos y los conceptos son equivalentes)",
+          "DisorderMappingValidationStatus": "Validado",
+          "Reference": "607131",
+          "Source": "OMIM"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "correspondencia exacta (los t\u00e9rminos y los conceptos son equivalentes)",
+          "DisorderMappingValidationStatus": "Validado",
+          "Reference": "C4304500",
+          "Source": "UMLS"
+        }
+      ],
+      "ORPHAcode": 166024,
+      "OrphanetURL": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=es&Expert=166024",
+      "Preferred term": "S\u00edndrome de displasia epifisaria m\u00faltiple-macrocefalia-dismorfia facial",
+      "SummaryInformation": [
+        {
+          "Definici\u00f3n": "Es una displasia \u00f3sea primaria poco frecuente caracterizada por displasia epifisaria m\u00faltiple asociada a macrocefalia y a rasgos faciales dism\u00f3rficos (como frente prominente, hipertelorismo, aplanamiento de la regi\u00f3n malar, orejas de implantaci\u00f3n baja y cuello corto). Los pacientes alcanzan una talla adulta normal y se presentan con inflamaci\u00f3n articular y <i>genu valgum</i>. Otras manifestaciones descritas son clinodactilia, dedos ahusados y <i>pectus excavatum</i>."
+        }
+      ],
+      "Synonym": [
+        "Displasia epifisaria m\u00faltiple tipo Al-Gazali"
+      ],
+      "Typology": "Enfermedad"
+    }
+  },
+  "datasetCategory": {
+    "lang": "es",
+    "name": "Rare diseases and cross-referencing"
+  },
+  "parameters": {
+    "path": {
+      "ORPHAcode": 166024
+    },
+    "query": {
+      "lang": "es"
+    }
+  },
+  "uri": "https://api.orphadata.com/rd-cross-referencing/orphacodes/166024?lang=es"
+}

@@ -1,0 +1,115 @@
+{
+  "data": {
+    "__count": 1,
+    "__licence": {
+      "identifier": "CC-BY-4.0",
+      "link": "https://creativecommons.org/licenses/by/4.0",
+      "name": "Creative Commons Attribution 4.0 International"
+    },
+    "results": {
+      "Date": "2026-06-23 07:53:50",
+      "DisorderDisorderAssociation": [
+        {
+          "DisorderDisorderAssociationType": "Referred to",
+          "RootDisorder": {
+            "ORPHAcode": 2860,
+            "Preferred term": "OBSOLETE: Preeyasombat-Varavithya syndrome"
+          },
+          "TargetDisorder": null
+        },
+        {
+          "DisorderDisorderAssociationType": "Referred to",
+          "RootDisorder": {
+            "ORPHAcode": 3284,
+            "Preferred term": "OBSOLETE: Tachycardia-hypertension-microphthalmos-hyperglycinuria syndrome"
+          },
+          "TargetDisorder": null
+        },
+        {
+          "DisorderDisorderAssociationType": "Referred to",
+          "RootDisorder": {
+            "ORPHAcode": 98710,
+            "Preferred term": "OBSOLETE: Metabolic disease associated with ocular features"
+          },
+          "TargetDisorder": null
+        },
+        {
+          "DisorderDisorderAssociationType": "Referred to",
+          "RootDisorder": {
+            "ORPHAcode": 98711,
+            "Preferred term": "OBSOLETE: Metabolic disease with corneal opacity"
+          },
+          "TargetDisorder": null
+        },
+        {
+          "DisorderDisorderAssociationType": "Referred to",
+          "RootDisorder": {
+            "ORPHAcode": 98713,
+            "Preferred term": "OBSOLETE: Metabolic disease with pigmentary retinitis"
+          },
+          "TargetDisorder": null
+        },
+        {
+          "DisorderDisorderAssociationType": "Referred to",
+          "RootDisorder": {
+            "ORPHAcode": 98714,
+            "Preferred term": "OBSOLETE: Metabolic disease with macular cherry-red spot"
+          },
+          "TargetDisorder": null
+        }
+      ],
+      "DisorderFlag": [
+        {
+          "Label": "Head of classification",
+          "Value": 128
+        },
+        {
+          "Label": null,
+          "Value": 1
+        }
+      ],
+      "DisorderGroup": "Group of disorders",
+      "ExternalReference": [
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Exact mapping: the two concepts are equivalent)",
+          "DisorderMappingValidationStatus": "Validated",
+          "Reference": "19052",
+          "Source": "MONDO"
+        },
+        {
+          "DisorderMappingICDRefUri": null,
+          "DisorderMappingICDRefUrl": null,
+          "DisorderMappingICDRelation": null,
+          "DisorderMappingRelation": "E (Exact mapping: the two concepts are equivalent)",
+          "DisorderMappingValidationStatus": "Validated",
+          "Reference": "C5680169",
+          "Source": "UMLS"
+        }
+      ],
+      "ORPHAcode": 68367,
+      "OrphanetURL": "http://www.orpha.net/consor/cgi-bin/OC_Exp.php?lng=en&Expert=68367",
+      "Preferred term": "Rare inborn error of metabolism",
+      "SummaryInformation": null,
+      "Synonym": [
+        "Rare metabolic disease"
+      ],
+      "Typology": "Category"
+    }
+  },
+  "datasetCategory": {
+    "lang": "en",
+    "name": "Rare diseases and cross-referencing"
+  },
+  "parameters": {
+    "path": {
+      "ORPHAcode": 68367
+    },
+    "query": {
+      "lang": "en"
+    }
+  },
+  "uri": "https://api.orphadata.com/rd-cross-referencing/orphacodes/68367?lang=en"
+}
