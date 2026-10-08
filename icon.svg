@@ -1,0 +1,10 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MnemoHealth">
+  <defs>
+    <linearGradient id="health-grad" x1="6" y1="42" x2="42" y2="6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 41C24 41 6 30 6 17.5C6 12 10 8 15 8C19 8 22 10.5 24 13.5C26 10.5 29 8 33 8C38 8 42 12 42 17.5C42 30 24 41 24 41Z" fill="url(#health-grad)" fill-opacity="0.16" stroke="url(#health-grad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9 23H17L20 17L25 29L28 23H39" stroke="url(#health-grad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,8 +1,9 @@
 {
   "name": "@mnemosyne-plugins/mnemo-health",
   "displayName": "MnemoHealth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "category": "Memory",
+  "icon": "icon.svg",
   "vendor": "Mnemosyne Labs",
   "license": "MIT",
   "description": "Medical texts in your memory, from public sources: rare diseases (Orphanet, CC BY 4.0, English, French, Spanish), mental health topics (NIMH, public domain), WHO fact sheets (English, French, Spanish), the MeSH medical vocabulary (U.S. National Library of Medicine) and open-access research articles (PubMed Central, licence shown per article). Each text keeps its source, its date and its licence, in your knowledge folder and in one Memory Pack per source. It quotes texts and gives no medical advice.",

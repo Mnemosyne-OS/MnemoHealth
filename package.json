@@ -1,6 +1,6 @@
 {
   "name": "@mnemosyne-plugins/mnemo-health",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "description": "Medical texts in memory: rare diseases (Orphanet), mental health (NIMH), WHO fact sheets, medical vocabulary (MeSH) and open-access research articles (PMC). The cartridge quotes texts and gives no medical advice.",
