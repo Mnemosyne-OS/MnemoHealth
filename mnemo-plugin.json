@@ -1,7 +1,7 @@
 {
   "name": "@mnemosyne-plugins/mnemo-health",
   "displayName": "MnemoHealth",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "category": "Memory",
   "icon": "icon.svg",
   "vendor": "Mnemosyne Labs",
@@ -28,10 +28,285 @@
     "vault:read",
     "dialog:open"
   ],
+  "repository": "https://github.com/Mnemosyne-OS/MnemoHealth",
   "updateStrategy": "git",
   "entrypoints": {
     "renderer": "index.html"
   },
+  "agentActions": [
+    {
+      "id": "status",
+      "summary": "Say what MnemoHealth shows and holds: the domain on screen, the job running, what is already in memory per source",
+      "details": "inMemory has one line per source and language: entries in the vault, failed, skipped (no text at the source), and where an Add all run stopped. onScreen is what the last gesture said. Nothing is added while library is not read or vault is not ready.",
+      "effect": "read"
+    },
+    {
+      "id": "sources",
+      "summary": "List the domains and their sources (Orphanet, NIMH, WHO, MeSH, PubMed Central), with languages and licences",
+      "details": "A catalogue source (orphanet, nimh, who) loads whole; a searched source (mesh, pmc) is loaded by words, one page at a time.",
+      "effect": "read"
+    },
+    {
+      "id": "openDomain",
+      "summary": "Show one domain's screen, as a click on its tile does",
+      "effect": "write",
+      "params": {
+        "domain": {
+          "type": "string",
+          "description": "The domain: rare diseases, mental health, WHO fact sheets, vocabulary, research",
+          "enum": [
+            "rare",
+            "mental",
+            "who",
+            "vocab",
+            "research"
+          ]
+        }
+      },
+      "required": [
+        "domain"
+      ]
+    },
+    {
+      "id": "loadList",
+      "summary": "Load a source's list (a catalogue) or search it (MeSH, PubMed Central), as its Load or Search button does",
+      "details": "The domain is shown and the list read on screen. A catalogue takes no query: narrow it with entries. A searched source needs query, and offset pages its results. Answers the count and the first 30 entries; past 45 s it answers running: call status, then entries.",
+      "effect": "write",
+      "params": {
+        "source": {
+          "type": "string",
+          "description": "The source",
+          "enum": [
+            "orphanet",
+            "nimh",
+            "who",
+            "mesh",
+            "pmc"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "The language to read it in, the one on screen when absent (orphanet and who: en, fr, es; the others en)",
+          "enum": [
+            "en",
+            "fr",
+            "es"
+          ]
+        },
+        "query": {
+          "type": "string",
+          "description": "Words to search MeSH or PubMed Central for",
+          "maxLength": 200
+        },
+        "offset": {
+          "type": "number",
+          "description": "Where a page of search results starts, 0 when absent",
+          "minimum": 0,
+          "maximum": 100000
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    {
+      "id": "turnPage",
+      "summary": "Show the next or the previous page of a PubMed Central search, as the Next and Previous buttons do (MeSH answers in one page)",
+      "details": "Pages the search on screen with its own words; refused FIRST_PAGE before the first page and LAST_PAGE after the last.",
+      "effect": "write",
+      "params": {
+        "source": {
+          "type": "string",
+          "description": "The source",
+          "enum": [
+            "orphanet",
+            "nimh",
+            "who",
+            "mesh",
+            "pmc"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "The language of the list, the one on screen when absent",
+          "enum": [
+            "en",
+            "fr",
+            "es"
+          ]
+        },
+        "direction": {
+          "type": "string",
+          "description": "Which page",
+          "enum": [
+            "next",
+            "previous"
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "direction"
+      ]
+    },
+    {
+      "id": "setLanguage",
+      "summary": "Read a source in another language, as its language menu does (Orphanet and WHO: en, fr, es; the others en only)",
+      "details": "Shows the source's domain and switches the language on screen; a list already loaded in that language comes back, otherwise call loadList.",
+      "effect": "write",
+      "params": {
+        "source": {
+          "type": "string",
+          "description": "The source",
+          "enum": [
+            "orphanet",
+            "nimh",
+            "who",
+            "mesh",
+            "pmc"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "The language",
+          "enum": [
+            "en",
+            "fr",
+            "es"
+          ]
+        }
+      },
+      "required": [
+        "source",
+        "lang"
+      ]
+    },
+    {
+      "id": "showHome",
+      "summary": "Go back to the home screen with its domain tiles, as the Back button does",
+      "effect": "write"
+    },
+    {
+      "id": "entries",
+      "summary": "Page through a loaded list, with each entry's state (in memory or not)",
+      "effect": "read",
+      "params": {
+        "source": {
+          "type": "string",
+          "description": "The source",
+          "enum": [
+            "orphanet",
+            "nimh",
+            "who",
+            "mesh",
+            "pmc"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "The language of the list, the one on screen when absent",
+          "enum": [
+            "en",
+            "fr",
+            "es"
+          ]
+        },
+        "query": {
+          "type": "string",
+          "description": "Part of a title (or an exact id), to narrow the list",
+          "maxLength": 100
+        },
+        "limit": {
+          "type": "number",
+          "description": "How many to return, 30 when absent",
+          "minimum": 1,
+          "maximum": 200
+        },
+        "offset": {
+          "type": "number",
+          "description": "How many to skip, 0 when absent",
+          "minimum": 0,
+          "maximum": 1000000
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    {
+      "id": "add",
+      "summary": "Put one entry of a loaded list into memory, by its title or its id, as its Add button does",
+      "details": "The text is read from its source, filed in the source's Memory Pack and copied to the knowledge folder. Answers once the entry is in memory; WRITE_FAILED when it did not get there. PubMed Central is refused: its licences are chosen by the person on screen. Past 45 s it answers running.",
+      "effect": "write",
+      "params": {
+        "source": {
+          "type": "string",
+          "description": "The source",
+          "enum": [
+            "orphanet",
+            "nimh",
+            "who",
+            "mesh",
+            "pmc"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "The language of the list, the one on screen when absent",
+          "enum": [
+            "en",
+            "fr",
+            "es"
+          ]
+        },
+        "entryId": {
+          "type": "string",
+          "description": "The entry's title as the person says it (« mucoviscidose », « Marfan syndrome »), or its id from loadList or entries",
+          "maxLength": 300
+        }
+      },
+      "required": [
+        "source",
+        "entryId"
+      ]
+    },
+    {
+      "id": "addAll",
+      "summary": "Put a whole loaded catalogue, or a whole page of search results, into memory, as the Add all button does",
+      "details": "Starts and answers at once: it runs on screen while MnemoHealth stays open; a catalogue resumes where it last stopped. Call status for progress, stop to stop. PubMed Central is refused.",
+      "effect": "write",
+      "params": {
+        "source": {
+          "type": "string",
+          "description": "The source",
+          "enum": [
+            "orphanet",
+            "nimh",
+            "who",
+            "mesh",
+            "pmc"
+          ]
+        },
+        "lang": {
+          "type": "string",
+          "description": "The language of the list, the one on screen when absent",
+          "enum": [
+            "en",
+            "fr",
+            "es"
+          ]
+        }
+      },
+      "required": [
+        "source"
+      ]
+    },
+    {
+      "id": "stop",
+      "summary": "Stop the list or import running, as the Stop button does; what reached memory stays",
+      "effect": "write"
+    }
+  ],
   "widgets": [
     {
       "id": "mnemo-health-main",
@@ -41,5 +316,44 @@
       "defaultWidth": 760,
       "defaultHeight": 780
     }
-  ]
+  ],
+  "agentGuide": [
+    "Name an entry the way the person says it (« la mucoviscidose », « anxiety »): add finds it by its title in the loaded list, and an id still works. Several matches are refused AMBIGUOUS with their titles and ids: pick one and call add again with the id. NO_ENTRY lists titles that exist.",
+    "Spoken domains: rare diseases / maladies rares = orphanet (domain rare), mental health / santé mentale = nimh (mental), WHO / OMS fact sheets = who (who), medical vocabulary / vocabulaire = mesh (vocab), research articles / recherche = pmc (research).",
+    "To look at something: openDomain shows a domain, showHome goes back, setLanguage switches a source's language, loadList loads a catalogue or searches MeSH and PubMed Central by words, turnPage pages a search.",
+    "To put one text in memory: loadList the source first (a catalogue loads whole), then add with the title, in the same steps. addAll is a long run; stop stops it.",
+    "It quotes texts and gives no medical advice: never answer a health question from these actions, only show, find and file."
+  ],
+  "voiceCommands": {
+    "fr": [
+      "montre les maladies rares",
+      "charge la liste d'Orphanet",
+      "ajoute la mucoviscidose à ma mémoire",
+      "cherche anxiété dans le vocabulaire médical",
+      "page suivante des articles de recherche",
+      "lis les fiches de l'OMS en espagnol",
+      "arrête l'import",
+      "reviens à l'accueil"
+    ],
+    "en": [
+      "show rare diseases",
+      "load the Orphanet list",
+      "add cystic fibrosis to my memory",
+      "search the medical vocabulary for anxiety",
+      "next page of research articles",
+      "read the WHO fact sheets in Spanish",
+      "stop the import",
+      "go back home"
+    ],
+    "es": [
+      "muestra las enfermedades raras",
+      "carga la lista de Orphanet",
+      "añade la fibrosis quística a mi memoria",
+      "busca ansiedad en el vocabulario médico",
+      "página siguiente de artículos de investigación",
+      "lee las notas de la OMS en francés",
+      "detén la importación",
+      "vuelve al inicio"
+    ]
+  }
 }

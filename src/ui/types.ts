@@ -41,3 +41,10 @@ export interface SourceActions {
   onOpenLicence: (url: string) => void;
   onLang: (source: SourceId, lang: SourceLang) => void;
 }
+
+/** Whether a row can go into memory at all: a MeSH term needs its scope note, a PMC article an open version that is not retracted. */
+export function entryAddable(source: SourceId, e: Entry): boolean {
+  if (source === 'mesh') return !!e.extra?.scope;
+  if (source === 'pmc') return !!e.extra?.version && e.extra?.retracted === '0';
+  return true;
+}

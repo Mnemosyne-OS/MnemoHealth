@@ -11,7 +11,7 @@
  * downloads before a gesture. It quotes texts and gives no medical advice.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { MnemoCartridgeSDK } from './sdk/mnemo-sdk';
+import { sdk } from './host';
 import { useI18n } from './i18n/useI18n';
 import { translate } from './i18n/strings';
 import { fetchJson, fetchText, hostTextReader, HOST_FETCH_TIMEOUT_MS, sleep } from './lib/fetchers';
@@ -26,10 +26,9 @@ import { S } from './ui/styles';
 import { Home } from './ui/Home';
 import { DomainView } from './ui/DomainView';
 import { Footer } from './ui/Footer';
+import { HealthAgentActions } from './ui/HealthAgentActions';
 import { listKey, type Job, type LoadedList, type SourceActions, type VaultState, type View } from './ui/types';
 
-// Must match "name" in mnemo-plugin.json: the host keys the sandbox and pack vaults on it.
-const sdk = new MnemoCartridgeSDK('@mnemosyne-plugins/mnemo-health');
 
 /** A chronicle write is a local IPC; 15 s is the house default (rule 9). */
 const INGEST_TIMEOUT_MS = 15_000;
@@ -262,15 +261,18 @@ export default function App() {
     }
   };
 
+  /** One entry of a loaded list into memory: the row's « Add » button, and the agent's `add` (doc 149). */
+  const addOne = (source: SourceId, srcLang: SourceLang, entry: Entry, index: number) => {
+    const list = lists[listKey(source, srcLang)];
+    const rec = libRef.current.records.find((r) => r.key === recordKey(source, srcLang));
+    // An entry already in memory (added alone, or passed by an "add all" run) is counted once, even when added again.
+    const passed = !!list && countedIn(rec, list.entries, index);
+    return runAdd(source, srcLang, [entry], 'list', passed ? (id) => id === entry.id : undefined);
+  };
+
   const actions: SourceActions = {
     onLoad: (source, srcLang, query, offset) => { void loadList(source, srcLang, query, offset); },
-    onAddOne: (source, srcLang, entry, index) => {
-      const list = lists[listKey(source, srcLang)];
-      const rec = libRef.current.records.find((r) => r.key === recordKey(source, srcLang));
-      // An entry already in memory (added alone, or passed by an "add all" run) is counted once, even when added again.
-      const passed = !!list && countedIn(rec, list.entries, index);
-      void runAdd(source, srcLang, [entry], 'list', passed ? (id) => id === entry.id : undefined);
-    },
+    onAddOne: (source, srcLang, entry, index) => { void addOne(source, srcLang, entry, index); },
     onAddAll: (source, srcLang, entries, mode) => { void runAdd(source, srcLang, entries, mode); },
     onStop: () => abortRef.current?.abort(),
     onOpenLicence: openExternal,
@@ -313,6 +315,25 @@ export default function App() {
           onBack={() => go({ kind: 'home' })}
         />
       )}
+
+      {/* What an agent may do here (doc 149): the same tiles, lists and Add buttons the person uses. */}
+      <HealthAgentActions
+        view={view}
+        libStatus={libStatus}
+        vault={vault}
+        lib={lib}
+        lists={lists}
+        listError={listError}
+        job={job}
+        notice={notice}
+        langOf={langOf}
+        setLang={actions.onLang}
+        go={go}
+        loadList={loadList}
+        addOne={addOne}
+        addAll={actions.onAddAll}
+        stop={actions.onStop}
+      />
 
       <Footer
         t={t}

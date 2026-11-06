@@ -8,7 +8,7 @@
  */
 import { useMemo, useState } from 'react';
 import { S } from './styles';
-import { listKey, type Job, type LoadedList, type SourceActions, type T, type VaultState } from './types';
+import { entryAddable, listKey, type Job, type LoadedList, type SourceActions, type T, type VaultState } from './types';
 import { DOMAIN_ICON, MEASURED_SIZE, sourcesOf } from '../sources/catalogue';
 import { countedIn, recordKey, resumeIndex, type LibraryState } from '../lib/library';
 import { formatDuration, remainingSeconds } from '../lib/eta';
@@ -107,11 +107,7 @@ function SourcePanel(props: Parameters<typeof DomainView>[0] & { def: SourceDef 
     if (e.extra?.retracted === '1') return t('entry.retracted');
     return e.extra?.licence ? t('entry.licence', { licence: e.extra.licence }) : t('entry.noLicence');
   };
-  const rowAddable = (e: Entry): boolean => {
-    if (def.id === 'mesh') return !!e.extra?.scope;
-    if (def.id === 'pmc') return !!e.extra?.version && e.extra?.retracted === '0';
-    return true;
-  };
+  const rowAddable = (e: Entry): boolean => entryAddable(def.id, e);
 
   return (
     <>
